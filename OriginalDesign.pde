@@ -1,3 +1,6 @@
+float secondHand = 1;
+float minuteHand = 1/60;
+float hourHand = 1/3600;
 
 void setup()
 {
@@ -5,8 +8,10 @@ void setup()
 }
 void draw()
 {
-WatchBody();
-WatchFace();
+	background(255,255,255);
+	WatchBody();
+	WatchFace();
+	WatchHands();
 }
 
 void WatchBody(){
@@ -24,31 +29,23 @@ void WatchFace(){
 	fill(0,0,0);
 	//Insert Numerals Here
 	text("XII",192,145);
-	rotate(PI/6);
-	text("I",192,145);
-	rotate(PI/6);
-	text("II",192,145);
-	rotate(PI/6);
-	text("III",192,145);
-	rotate(PI/6);
-	text("IV",192,145);
-	rotate(PI/6);
-	text("V",192,145);
-	rotate(PI/6);
-	text("VI",192,145);
-	rotate(PI/6);
-	text("VII",192,145);
-	rotate(PI/6);
-	text("VIII",192,145);
-	rotate(PI/6);
-	text("IX",192,145);
-	rotate(PI/6);
-	text("X",192,145);
-	rotate(PI/6);
-	text("XI",192,145);
-	rotate(PI/6);
+	text("I",225,155);
+	text("II",245,180);
+	text("III",255,202.5);
+	text("IV",245,231.66);
+	text("V",225,251.83);
+	text("VI",192,260);
+	text("VII",167,251.83);
+	text("VIII",144,231.66);
+	text("IX",132,202.5);
+	text("X",144,180);
+	text("XI",167,155);
 }
 
 void WatchHands() {
-
+	//15 seconds = 90 degree or 1:6
+	line(200,200,200+secondHand,130-secondHand);
+	line(200,200,200-secondHand,130-secondHand);
+	line(200,200,200+secondHand,130-secondHand);
+	line(200,200,200+secondHand,130-secondHand);
 }
