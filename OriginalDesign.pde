@@ -1,6 +1,6 @@
-float secondHand = 1;
-float minuteHand = 1/60;
-float hourHand = 1/3600;
+float secondHand = 1/60;
+float minuteHand = 1/3600;
+float hourHand = 1/216000;
 
 void setup()
 {
@@ -43,9 +43,9 @@ void WatchFace(){
 }
 
 void WatchHands() {
-	//15 seconds = 90 degree or 1:6
-	line(200,200,200+secondHand,130-secondHand);
-	line(200,200,200-secondHand,130-secondHand);
-	line(200,200,200+secondHand,130-secondHand);
-	line(200,200,200+secondHand,130-secondHand);
+	if (secondHand > 60) {
+		secondHand = 1/60;
+	}
+	line(200,200,200+secondHand,140-secondHand);
+	secondHand = secondHand + 1;
 }
