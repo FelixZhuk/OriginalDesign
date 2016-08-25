@@ -1,7 +1,4 @@
-float secondHand = 1/60;
-float minuteHand = 1/3600;
-float hourHand = 1/216000;
-
+int initStrpY = 500;
 void setup()
 {
   size(400,400);
@@ -9,12 +6,13 @@ void setup()
 void draw()
 {
 	background(255,255,255);
-	WatchBody();
-	WatchFace();
-	WatchHands();
+	watchBody();
+	watchFace();
+	watchHands();
+	watchStrap();
 }
 
-void WatchBody(){
+void watchBody(){
 	fill(218,165,32);
 	rect(160,100,5,60);
 	rect(235,100,5,60);
@@ -23,7 +21,7 @@ void WatchBody(){
 	ellipse(200,200,150,150);
 }
 
-void WatchFace(){
+void watchFace(){
 	fill(255,255,255);
 	ellipse(200,200,140,140);
 	fill(0,0,0);
@@ -42,10 +40,18 @@ void WatchFace(){
 	text("XI",167,155);
 }
 
-void WatchHands() {
-	if (secondHand > 60) {
-		secondHand = 1/60;
+void watchHands() {
+	line(200,200,200,140);
+	stroke(2);
+	line(200,200,160,200);
+	stroke(4);
+	line(200,200,170,170);
+}
+
+void watchStrap() {
+	fill(139,69,19);
+	rect(165,initStrpY,70,45);
+	while (initStrpY > 240) {
+		initStrpY -= 1;
 	}
-	line(200,200,200+secondHand,140-secondHand);
-	secondHand = secondHand + 1;
 }
