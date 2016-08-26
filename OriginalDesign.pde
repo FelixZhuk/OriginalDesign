@@ -10,7 +10,6 @@ void draw()
 	watchFace();
 	watchHands();
 	watchStrap();
-	text("Press the mouse", 300,50);
 }
 
 void watchBody(){
