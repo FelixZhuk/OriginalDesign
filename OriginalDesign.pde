@@ -1,4 +1,4 @@
-int initStrpY = 500;
+float initStrpY = 295;
 void setup()
 {
   size(400,400);
@@ -10,6 +10,7 @@ void draw()
 	watchFace();
 	watchHands();
 	watchStrap();
+	text("Press the mouse", 300,50);
 }
 
 void watchBody(){
@@ -49,9 +50,9 @@ void watchHands() {
 }
 
 void watchStrap() {
-	fill(139,69,19);
-	rect(165,initStrpY,70,45);
-	while (initStrpY > 240) {
-		initStrpY -= 1;
+	if (mousePressed == true) {
+		fill(139,69,19);
+		rect(165,initStrpY,70,100);
+		rect(165,0,70,105);
 	}
 }
